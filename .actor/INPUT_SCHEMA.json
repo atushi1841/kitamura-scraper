@@ -21,6 +21,7 @@
     "sort": {
       "type": "string",
       "title": "Sort",
+      "description": "Sort order: default, price ascending, price descending, or newest first",
       "enum": ["default", "price_asc", "price_desc", "date_desc"],
       "enumTitles": ["Default", "Price Ascending", "Price Descending", "Newest"],
       "editor": "select",
