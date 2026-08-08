@@ -1,0 +1,51 @@
+{
+  "title": "Kitamura Japan Used Camera & Lens Scraper",
+  "description": "Scrape used cameras, lenses and electronics from shop.kitamura.jp via internal JSON API",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keyword": {
+      "type": "string",
+      "title": "Keyword",
+      "description": "Search keyword, e.g. LEICA, FUJIFILM, シグマ, ニコン",
+      "editor": "textfield",
+      "default": ""
+    },
+    "categoryId": {
+      "type": "integer",
+      "title": "Category ID",
+      "description": "Optional category filter from the used camera category list",
+      "editor": "number",
+      "minimum": 0
+    },
+    "sort": {
+      "type": "string",
+      "title": "Sort",
+      "enum": ["default", "price_asc", "price_desc", "date_desc"],
+      "enumTitles": ["Default", "Price Ascending", "Price Descending", "Newest"],
+      "editor": "select",
+      "default": "default"
+    },
+    "maxItems": {
+      "type": "integer",
+      "title": "Max items",
+      "description": "Maximum number of products to scrape (1-1000)",
+      "editor": "number",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 1000,
+      "unit": "items"
+    },
+    "proxyConfiguration": {
+      "type": "object",
+      "title": "Proxy configuration",
+      "editor": "proxy",
+      "prefill": {
+        "useApifyProxy": true,
+        "apifyProxyCountry": "JP"
+      },
+      "description": "Optional proxy. Recommended when scraping at scale."
+    }
+  },
+  "required": ["keyword"]
+}

@@ -1,0 +1,92 @@
+{
+  "actorSpecification": 1,
+  "name": "kitamura-japan-used-camera-scraper",
+  "version": "0.0.1",
+  "buildTag": "latest",
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "outputSchema": {
+    "actorOutputSchemaVersion": 1,
+    "title": "Kitamura Scraper Output",
+    "description": "Scraped product data from Kitamura (shop.kitamura.jp)",
+    "type": "object",
+    "properties": {
+      "productId": {
+        "title": "Productid",
+        "type": "string",
+        "description": "productId",
+        "template": "{{productId}}"
+      },
+      "title": {
+        "title": "Title",
+        "type": "string",
+        "description": "title",
+        "template": "{{title}}"
+      },
+      "price": {
+        "title": "Price",
+        "type": "string",
+        "description": "price",
+        "template": "{{price}}"
+      },
+      "maker": {
+        "title": "Maker",
+        "type": "string",
+        "description": "maker",
+        "template": "{{maker}}"
+      },
+      "shop": {
+        "title": "Shop",
+        "type": "string",
+        "description": "shop",
+        "template": "{{shop}}"
+      },
+      "category": {
+        "title": "Category",
+        "type": "string",
+        "description": "category",
+        "template": "{{category}}"
+      },
+      "description": {
+        "title": "Description",
+        "type": "string",
+        "description": "description",
+        "template": "{{description}}"
+      },
+      "imageUrl": {
+        "title": "Imageurl",
+        "type": "string",
+        "description": "imageUrl",
+        "template": "{{imageUrl}}"
+      },
+      "productUrl": {
+        "title": "Producturl",
+        "type": "string",
+        "description": "productUrl",
+        "template": "{{productUrl}}"
+      },
+      "janCode": {
+        "title": "Jancode",
+        "type": "string",
+        "description": "janCode",
+        "template": "{{janCode}}"
+      },
+      "salesStatus": {
+        "title": "Salesstatus",
+        "type": "string",
+        "description": "salesStatus",
+        "template": "{{salesStatus}}"
+      },
+      "scrapedAt": {
+        "title": "Scrapedat",
+        "type": "string",
+        "description": "scrapedAt",
+        "template": "{{scrapedAt}}"
+      }
+    },
+    "required": [
+      "productId",
+      "title"
+    ]
+  }
+}
